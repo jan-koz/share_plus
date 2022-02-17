@@ -34,21 +34,11 @@ import android.content.IntentFilter;
       //super.onReceive(context, intent);
       String selectedAppPackage = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOSEN_COMPONENT));
       ComponentName clickedComponent = intent.getParcelableExtra(intent.EXTRA_CHOSEN_COMPONENT);
+
       System.out.println("OnRECEIVEL");
+      System.out.println(selectedAppPackage);
       System.out.println("selectedAppPackage on receive");
       // do something here
-  }
-
-  @Override
-  public void onPause() {
-    super.onPause();
-    System.out.println("onPause");
-  }
-
-  @Override
-  public void onResume() {
-    super.onResume();
-    System.out.println("onResume");
   }
   
 }
