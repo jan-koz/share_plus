@@ -41,6 +41,7 @@ import android.content.IntentFilter;
       //super.onReceive(context, intent);
       String selectedAppPackage = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOSEN_COMPONENT));
       ComponentName clickedComponent = intent.getParcelableExtra(intent.EXTRA_CHOSEN_COMPONENT);
+      System.out.println(clickedComponent.getPackageName());
       System.out.println("selectedAppPackage");
       Log.d("selected app",selectedAppPackage);
       // do something here
