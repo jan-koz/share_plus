@@ -34,24 +34,20 @@ import android.content.IntentFilter;
       //super.onReceive(context, intent);
       String selectedAppPackage = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOSEN_COMPONENT));
       ComponentName clickedComponent = intent.getParcelableExtra(intent.EXTRA_CHOSEN_COMPONENT);
-      System.out.println("OnRECEIVE");
-      System.out.println(clickedComponent.getPackageName());
+      System.out.println("OnRECEIVEL");
       System.out.println("selectedAppPackage on receive");
-      Log.d("selected app",selectedAppPackage);
       // do something here
   }
 
-  // @Override
-  // public void onPause() {
-  //   System.out.println("onPause");
+  @Override
+  public void onPause() {
+    System.out.println("onPause");
+  }
 
-  // }
-
-  // @Override
-  // public void onResume() {
-  //   System.out.println("onResume");
-
-  // }
+  @Override
+  public void onResume() {
+    System.out.println("onResume");
+  }
   
 }
 
@@ -85,7 +81,7 @@ class Share {
 
   void share(String text, String subject) {
     if (text == null || text.isEmpty()) {
-      throw new IllegalArgumentException("Non-empty text expected :((((");
+      throw new IllegalArgumentException("Non-empty text expected :)(");
     }
     BroadcastReceiver br = new MyReceiver();
     IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
