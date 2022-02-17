@@ -41,19 +41,17 @@ import android.content.IntentFilter;
       // do something here
   }
 
-  @Override
-  public void onPause() {
-    //super.onPause();
-    System.out.println("onPause");
+  // @Override
+  // public void onPause() {
+  //   System.out.println("onPause");
 
-  }
+  // }
 
-  @Override
-  public void onResume() {
-    //super.onPause();
-    System.out.println("onResume");
+  // @Override
+  // public void onResume() {
+  //   System.out.println("onResume");
 
-  }
+  // }
   
 }
 
