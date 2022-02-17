@@ -29,25 +29,32 @@ import android.content.IntentFilter;
 
 
  class MyReceiver extends BroadcastReceiver {
-
-  // @Override public void onReceive(Context context, Intent intent) {
-  //   ComponentName clickedComponent = intent.getParcelableExtra(intent.EXTRA_CHOSEN_COMPONENT);
-    
-  // }
-
-
   @Override
   public void onReceive(Context context, Intent intent) {
       //super.onReceive(context, intent);
       String selectedAppPackage = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOSEN_COMPONENT));
       ComponentName clickedComponent = intent.getParcelableExtra(intent.EXTRA_CHOSEN_COMPONENT);
       System.out.println(clickedComponent.getPackageName());
-      System.out.println("selectedAppPackage");
+      System.out.println("selectedAppPackage on receive");
       Log.d("selected app",selectedAppPackage);
       // do something here
   }
-}
 
+  @Override
+  public void onPause() {
+    //super.onPause();
+    System.out.println("onPause");
+
+  }
+
+  @Override
+  public void onResume() {
+    //super.onPause();
+    System.out.println("onResume");
+
+  }
+  
+}
 
 /** Handles share intent. */
 class Share {
