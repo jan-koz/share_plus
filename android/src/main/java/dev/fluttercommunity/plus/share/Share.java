@@ -34,8 +34,8 @@ import android.content.IntentFilter;
       //super.onReceive(context, intent);
       String selectedAppPackage = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOSEN_COMPONENT));
       ComponentName clickedComponent = intent.getParcelableExtra(intent.EXTRA_CHOSEN_COMPONENT);
-      System.out.println(clickedComponent.getPackageName());
       System.out.println("OnRECEIVE");
+      System.out.println(clickedComponent.getPackageName());
       System.out.println("selectedAppPackage on receive");
       Log.d("selected app",selectedAppPackage);
       // do something here
@@ -87,7 +87,7 @@ class Share {
 
   void share(String text, String subject) {
     if (text == null || text.isEmpty()) {
-      throw new IllegalArgumentException("Non-empty text expected :(");
+      throw new IllegalArgumentException("Non-empty text expected :((((");
     }
     BroadcastReceiver br = new MyReceiver();
     IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
