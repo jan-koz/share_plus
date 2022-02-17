@@ -38,6 +38,7 @@ import android.content.IntentFilter;
       System.out.println("OnRECEIVEL");
       System.out.println(selectedAppPackage);
       System.out.println("selectedAppPackage on receive");
+      Toast.makeText(context, "text", Toast.LENGTH_LONG).show();
       // do something here
   }
   
@@ -88,6 +89,7 @@ class Share {
         new Intent(this.context, MyReceiver.class),
         PendingIntent.FLAG_UPDATE_CURRENT);
     shareIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
+    this.context.sendBroadcast(shareIntent);
     //Intent chooserIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
     activity.startActivity(shareIntent);
 
