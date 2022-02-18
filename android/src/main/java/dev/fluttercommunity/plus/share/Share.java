@@ -72,7 +72,7 @@ class Share {
     //Intent chooserIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
     activity.startActivity(shareIntent);
     
-    return MyReceiver.class.didGoToApp;
+    return MyReceiver.didGoToApp;
   
   }
 
