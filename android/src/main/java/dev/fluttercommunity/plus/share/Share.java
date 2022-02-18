@@ -28,21 +28,6 @@ import android.net.ConnectivityManager;
 import android.content.IntentFilter;
 import android.widget.Toast;
 
-  public class MyReceiver extends BroadcastReceiver {
-  @Override
-  public void onReceive(Context context, Intent intent) {
-      //super.onReceive(context, intent);
-      String selectedAppPackage = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOSEN_COMPONENT));
-      ComponentName clickedComponent = intent.getParcelableExtra(intent.EXTRA_CHOSEN_COMPONENT);
-
-      System.out.println("OnRECEIVEL");
-      System.out.println(selectedAppPackage);
-      System.out.println("selectedAppPackage on receive");
-      // do something here
-  }
-  
-}
-
 /** Handles share intent. */
 class Share {
 
