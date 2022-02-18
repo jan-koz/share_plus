@@ -28,7 +28,7 @@ import android.net.ConnectivityManager;
 import android.content.IntentFilter;
 import android.widget.Toast;
 
- public class MyReceiver extends BroadcastReceiver {
+  class MyReceiver extends BroadcastReceiver {
   @Override
   public void onReceive(Context context, Intent intent) {
       //super.onReceive(context, intent);
@@ -78,7 +78,7 @@ class Share {
     BroadcastReceiver br = new MyReceiver();
     IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
     filter.addAction(Intent.ACTION_SEND);
-    context.registerReceiver(br, filter);
+    //context.registerReceiver(br, filter);
 
     Intent shareIntent = new Intent(Intent.ACTION_SEND);
     shareIntent.putExtra(Intent.EXTRA_TEXT, text);
