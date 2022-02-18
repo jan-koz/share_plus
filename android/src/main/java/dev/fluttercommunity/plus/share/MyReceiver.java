@@ -38,6 +38,7 @@ public class MyReceiver extends BroadcastReceiver {
         if(selectedAppPackage != null){
             didGoToApp = true;
         }
+        System.out.println(didGoToApp);
         // do something here
     }
     
