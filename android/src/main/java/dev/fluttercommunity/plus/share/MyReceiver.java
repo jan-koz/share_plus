@@ -28,9 +28,11 @@ public class MyReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         //super.onReceive(context, intent);
+        String checkIfSuccess = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOSEN_COMPONENT_INTENT_SENDER));
         String selectedAppPackage = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOSEN_COMPONENT));
         ComponentName clickedComponent = intent.getParcelableExtra(intent.EXTRA_CHOSEN_COMPONENT);
-  
+        
+        System.out.println(checkIfSuccess);
         System.out.println("OnRECEIVEL");
         System.out.println(selectedAppPackage);
         System.out.println("selectedAppPackage on receive");
