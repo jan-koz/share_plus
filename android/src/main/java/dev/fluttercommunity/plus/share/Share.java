@@ -38,7 +38,6 @@ import android.widget.Toast;
       System.out.println("OnRECEIVEL");
       System.out.println(selectedAppPackage);
       System.out.println("selectedAppPackage on receive");
-      Toast.makeText(context, "text", Toast.LENGTH_LONG).show();
       // do something here
   }
   

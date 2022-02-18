@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="dev.fluttercommunity.plus.share">
     <application>
+      <receiver android:name="MyReceiver" android:enabled="true" android:exported="false"/>    
       <provider
         android:name="dev.fluttercommunity.plus.share.ShareFileProvider"
         android:authorities="${applicationId}.flutter.share_provider"
