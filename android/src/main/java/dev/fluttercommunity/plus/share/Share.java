@@ -56,15 +56,10 @@ class Share {
     this.activity = activity;
   }
 
-  void share(String text, String subject) {
+  boolean share(String text, String subject) {
     if (text == null || text.isEmpty()) {
       throw new IllegalArgumentException("Non-empty text expected :)(");
     }
-    // BroadcastReceiver br = new MyReceiver();
-    // IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
-    // filter.addAction(Intent.ACTION_SEND);
-    //context.registerReceiver(br, filter);
-
     Intent shareIntent = new Intent(Intent.ACTION_SEND);
     shareIntent.putExtra(Intent.EXTRA_TEXT, text);
     shareIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
@@ -76,7 +71,9 @@ class Share {
     this.context.sendBroadcast(shareIntent);
     //Intent chooserIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
     activity.startActivity(shareIntent);
-
+    
+    return MyReceiver.class.didGoToApp;
+  
   }
 
 

@@ -25,22 +25,19 @@ import android.content.IntentFilter;
 import android.widget.Toast;
 
 public class MyReceiver extends BroadcastReceiver {
+    boolean didGoToApp = false;
     @Override
     public void onReceive(Context context, Intent intent) {
         //super.onReceive(context, intent);
-        
-        String extraChosenRefinmentIntentSender = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOOSER_REFINEMENT_INTENT_SENDER));
-        String extraChosenComponentIntentSender = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOSEN_COMPONENT_INTENT_SENDER));
         String selectedAppPackage = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOSEN_COMPONENT));
         ComponentName clickedComponent = intent.getParcelableExtra(intent.EXTRA_CHOSEN_COMPONENT);
-
-
         
-        System.out.println(extraChosenComponentIntentSender);
         System.out.println("OnRECEIVEL");
         System.out.println(selectedAppPackage);
         System.out.println("selectedAppPackage on receive");
-        System.out.println(extraChosenRefinmentIntentSender);
+        if(selectedAppPackage != null){
+            didGoToApp = true;
+        }
         // do something here
     }
     
