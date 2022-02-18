@@ -28,7 +28,7 @@ import android.net.ConnectivityManager;
 import android.content.IntentFilter;
 import android.widget.Toast;
 
-  class MyReceiver extends BroadcastReceiver {
+  public class MyReceiver extends BroadcastReceiver {
   @Override
   public void onReceive(Context context, Intent intent) {
       //super.onReceive(context, intent);
