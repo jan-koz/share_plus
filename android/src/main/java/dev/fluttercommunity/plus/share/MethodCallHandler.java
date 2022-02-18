@@ -27,8 +27,8 @@ class MethodCallHandler implements MethodChannel.MethodCallHandler {
       case "share":
         expectMapArguments(call);
         // Android does not support showing the share sheet at a particular point on screen.
-        share.share((String) call.argument("text"), (String) call.argument("subject"));
-        result.success(null);
+        boolean returnValue = share.share((String) call.argument("text"), (String) call.argument("subject"));
+        result.success(returnValue);
         break;
       case "shareFiles":
         expectMapArguments(call);
