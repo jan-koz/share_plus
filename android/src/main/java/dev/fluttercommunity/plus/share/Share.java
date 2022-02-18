@@ -75,9 +75,9 @@ class Share {
     if (text == null || text.isEmpty()) {
       throw new IllegalArgumentException("Non-empty text expected :)(");
     }
-    BroadcastReceiver br = new MyReceiver();
-    IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
-    filter.addAction(Intent.ACTION_SEND);
+    // BroadcastReceiver br = new MyReceiver();
+    // IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+    // filter.addAction(Intent.ACTION_SEND);
     //context.registerReceiver(br, filter);
 
     Intent shareIntent = new Intent(Intent.ACTION_SEND);
