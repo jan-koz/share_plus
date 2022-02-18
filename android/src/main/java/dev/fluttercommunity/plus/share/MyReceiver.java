@@ -25,7 +25,7 @@ import android.content.IntentFilter;
 import android.widget.Toast;
 
 public class MyReceiver extends BroadcastReceiver {
-    boolean didGoToApp = false;
+    static boolean didGoToApp = false;
     @Override
     public void onReceive(Context context, Intent intent) {
         //super.onReceive(context, intent);
