@@ -41,7 +41,7 @@ class Share {
    * intent. The {@code activity} might be null when constructing the {@link Share} object and set
    * to non-null when an activity is available using {@link #setActivity(Activity)}.
    */
-  Share(Context context, Activity activity) {
+  Share(Context context, ShareActivity activity) {
     this.context = context;
     this.activity = activity;
 
@@ -52,7 +52,7 @@ class Share {
    * Sets the activity when an activity is available. When the activity becomes unavailable, use
    * this method to set it to null.
    */
-  void setActivity(Activity activity) {
+  void setActivity(ShareActivity activity) {
     this.activity = activity;
   }
 
