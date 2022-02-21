@@ -61,27 +61,26 @@ class Share {
       throw new IllegalArgumentException("Non-empty text expected :)(");
     }
 
-    Intent actionIntent = new Intent(
-        context, MyReceiver.class);
-    PendingIntent pendingIntent = 
-        PendingIntent.getBroadcast(this.context, 0, actionIntent, 0);            
+    // Intent actionIntent = new Intent(
+    //     context, MyReceiver.class);
+    // PendingIntent pendingIntent = 
+    //     PendingIntent.getBroadcast(this.context, 0, actionIntent, 0);            
 
 //Set the pendingIntent as the action to be performed when the button is clicked.            
 
-    // Intent shareIntent = new Intent(Intent.ACTION_SEND);
-    // shareIntent.putExtra(Intent.EXTRA_TEXT, text);
-    // shareIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-    // shareIntent.setType("text/plain");
-    // PendingIntent pi = PendingIntent.getBroadcast(this.context, 0,
-    //     new Intent(this.context, MyReceiver.class),
-    //     PendingIntent.FLAG_UPDATE_CURRENT);
-    // shareIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
+    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+    shareIntent.putExtra(Intent.EXTRA_TEXT, text);
+    shareIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+    shareIntent.setType("text/plain");
+    PendingIntent pi = PendingIntent.getBroadcast(this.context, 0,
+        new Intent(this.context, MyReceiver.class),
+        PendingIntent.FLAG_UPDATE_CURRENT);
+    shareIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
     //this.context.sendBroadcast(shareIntent);
     //Intent chooserIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
     int code = 1;
     System.out.println(activity);
-    activity.startActivity(actionIntent);
-    //activity.startActivityForResult(shareIntent, code);
+    activity.startActivityForResult(shareIntent, code);
     System.out.println(MyReceiver.didGoToApp);
     return MyReceiver.didGoToApp;
   
