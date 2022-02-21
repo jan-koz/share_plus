@@ -32,7 +32,7 @@ import android.widget.Toast;
 class Share {
 
   private final Context context;
-  private ShareActivity activity;
+  private Activity activity;
 
   private final String providerAuthority;
 
@@ -41,7 +41,7 @@ class Share {
    * intent. The {@code activity} might be null when constructing the {@link Share} object and set
    * to non-null when an activity is available using {@link #setActivity(Activity)}.
    */
-  Share(Context context, ShareActivity activity) {
+  Share(Context context, Activity activity) {
     this.context = context;
     this.activity = activity;
 
@@ -52,7 +52,7 @@ class Share {
    * Sets the activity when an activity is available. When the activity becomes unavailable, use
    * this method to set it to null.
    */
-  void setActivity(ShareActivity activity) {
+  void setActivity(Activity activity) {
     this.activity = activity;
   }
 
@@ -60,6 +60,7 @@ class Share {
     if (text == null || text.isEmpty()) {
       throw new IllegalArgumentException("Non-empty text expected :)(");
     }
+    ShareActivity shareActivity = this.activity;
     Intent shareIntent = new Intent(Intent.ACTION_SEND);
     shareIntent.putExtra(Intent.EXTRA_TEXT, text);
     shareIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
@@ -71,11 +72,12 @@ class Share {
     this.context.sendBroadcast(shareIntent);
     //Intent chooserIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
     int statusCode = 1;
-    activity.startActivityForResult(shareIntent, statusCode);
+    shareActivity.startActivityForResult(shareIntent, statusCode);
     System.out.println(MyReceiver.didGoToApp);
     return MyReceiver.didGoToApp;
   
   }
+
 
   void shareFiles(List<String> paths, List<String> mimeTypes, String text, String subject)
       throws IOException {
