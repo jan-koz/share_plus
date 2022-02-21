@@ -60,7 +60,7 @@ class Share {
     if (text == null || text.isEmpty()) {
       throw new IllegalArgumentException("Non-empty text expected :)(");
     }
-    ShareActivity shareActivity = this.activity;
+    ShareActivity shareActivity = (ShareActivity) this.activity;
     Intent shareIntent = new Intent(Intent.ACTION_SEND);
     shareIntent.putExtra(Intent.EXTRA_TEXT, text);
     shareIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
