@@ -76,7 +76,7 @@ class Share {
     //     new Intent(this.context, MyReceiver.class),
     //     PendingIntent.FLAG_UPDATE_CURRENT);
     // shareIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
-    this.context.sendBroadcast(shareIntent);
+    //this.context.sendBroadcast(shareIntent);
     //Intent chooserIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
     int code = 1;
     System.out.println(activity);

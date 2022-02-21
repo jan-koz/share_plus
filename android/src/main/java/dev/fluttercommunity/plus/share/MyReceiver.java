@@ -32,8 +32,8 @@ public class MyReceiver extends BroadcastReceiver {
         shareIntent.putExtra(Intent.EXTRA_TEXT, "text");
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, "subject");
         shareIntent.setType("text/plain");
-        shareIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
-        startActivity(shareIntent);
+        shareIntent = Intent.createChooser(shareIntent, null);
+        context.startActivity(shareIntent);
         //super.onReceive(context, intent);
         String selectedAppPackage = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOSEN_COMPONENT));
         ComponentName clickedComponent = intent.getParcelableExtra(intent.EXTRA_CHOSEN_COMPONENT);
