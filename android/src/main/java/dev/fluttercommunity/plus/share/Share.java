@@ -60,7 +60,7 @@ class Share {
     if (text == null || text.isEmpty()) {
       throw new IllegalArgumentException("Non-empty text expected :)(");
     }
-    ShareActivity shareActivity = (ShareActivity) this.activity;
+    ShareActivity shareAct = new ShareActivity();
     Intent shareIntent = new Intent(Intent.ACTION_SEND);
     shareIntent.putExtra(Intent.EXTRA_TEXT, text);
     shareIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
@@ -71,8 +71,7 @@ class Share {
     shareIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
     this.context.sendBroadcast(shareIntent);
     //Intent chooserIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
-    int statusCode = 1;
-    shareActivity.startActivityForResult(shareIntent, statusCode);
+    shareAct.startActivityForResult(shareIntent);
     System.out.println(MyReceiver.didGoToApp);
     return MyReceiver.didGoToApp;
   
