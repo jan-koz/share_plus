@@ -80,7 +80,7 @@ class Share {
 @Override
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-    System.out.println("onActivityResult")
+    System.out.println("onActivityResult");
    if(resultCode==RESULT_OK){
       if(requestCode==100){
         
