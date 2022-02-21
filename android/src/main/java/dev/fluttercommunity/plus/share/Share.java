@@ -32,7 +32,7 @@ import android.widget.Toast;
 class Share {
 
   private final Context context;
-  private Activity activity;
+  private ShareActivity activity;
 
   private final String providerAuthority;
 
@@ -76,22 +76,6 @@ class Share {
     return MyReceiver.didGoToApp;
   
   }
-
-@Override
-protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
-    System.out.println("onActivityResult");
-   if(resultCode==RESULT_OK){
-      if(requestCode==100){
-        
-       }
-   }
-
-}
-
-
-
-
 
   void shareFiles(List<String> paths, List<String> mimeTypes, String text, String subject)
       throws IOException {
