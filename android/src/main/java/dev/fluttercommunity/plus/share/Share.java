@@ -71,7 +71,8 @@ class Share {
     shareIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
     this.context.sendBroadcast(shareIntent);
     //Intent chooserIntent = Intent.createChooser(shareIntent, null, pi.getIntentSender());
-    shareAct.startActivityForResult(shareIntent);
+    int code = 1;
+    activity.startActivityForResult(shareIntent, code);
     System.out.println(MyReceiver.didGoToApp);
     return MyReceiver.didGoToApp;
   
