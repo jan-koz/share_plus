@@ -77,6 +77,20 @@ class Share {
   
   }
 
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    System.out.println("onActivityResult")
+   if(resultCode==RESULT_OK){
+      if(requestCode==100){
+        
+       }
+   }
+
+}
+
+
+
 
 
   void shareFiles(List<String> paths, List<String> mimeTypes, String text, String subject)
