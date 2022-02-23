@@ -28,21 +28,16 @@ public class MyReceiver extends BroadcastReceiver {
     static boolean didGoToApp = false;
     @Override
     public void onReceive(Context context, Intent intent) {
-        // Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        // shareIntent.putExtra(Intent.EXTRA_TEXT, "text");
-        // shareIntent.putExtra(Intent.EXTRA_SUBJECT, "subject");
-        // shareIntent.setType("text/plain");
-        // shareIntent = Intent.createChooser(shareIntent, null);
-        // context.startActivity(shareIntent);
-        //super.onReceive(context, intent);
+
         String selectedAppPackage = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOSEN_COMPONENT));
-        ComponentName clickedComponent = intent.getParcelableExtra(intent.EXTRA_CHOSEN_COMPONENT);
-        
+        System.out.println(intent.didGoToApp);
         System.out.println("OnRECEIVEL");
         System.out.println(selectedAppPackage);
         System.out.println("selectedAppPackage on receive");
         if(selectedAppPackage != null){
             didGoToApp = true;
+            intent.didGoToApp = true;
+
         }
         System.out.println(didGoToApp);
         // do something here
