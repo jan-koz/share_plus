@@ -36,14 +36,14 @@ public class MyReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        flutterEngine = new FlutterEngine(context, null);
-        DartExecutor executor = flutterEngine.getDartExecutor();
-        backgroundMethodChannel = new MethodChannel(executor.getBinaryMessenger(), "your channel name");
-        backgroundMethodChannel.setMethodCallHandler(this);
-        // Get and launch the users app isolate manually:
-        executor.executeDartEntrypoint(DartExecutor.DartEntrypoint.createDefault());
+        // final flutterEngine = new FlutterEngine(context, null);
+        // DartExecutor executor = flutterEngine.getDartExecutor();
+        // final backgroundMethodChannel = new MethodChannel(executor.getBinaryMessenger(), "your channel name");
+        // backgroundMethodChannel.setMethodCallHandler(this);
+        // // Get and launch the users app isolate manually:
+        // executor.executeDartEntrypoint(DartExecutor.DartEntrypoint.createDefault());
 
-        flutterEngine.getBroadcastReceiverControlSurface().attachToBroadcastReceiver(this, null); 
+        // flutterEngine.getBroadcastReceiverControlSurface().attachToBroadcastReceiver(this, null); 
 
         String selectedAppPackage = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOSEN_COMPONENT));
         System.out.println(selectedAppPackage);
