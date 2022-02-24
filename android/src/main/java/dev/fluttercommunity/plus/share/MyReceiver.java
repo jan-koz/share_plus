@@ -30,15 +30,12 @@ public class MyReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         String selectedAppPackage = String.valueOf(intent.getExtras().get(intent.EXTRA_CHOSEN_COMPONENT));
-        System.out.println(intent.getExtras().getString("didGoToApp"));
-        System.out.println("OnRECEIVEL");
         System.out.println(selectedAppPackage);
-        System.out.println("selectedAppPackage on receive");
         if(selectedAppPackage != null){
             didGoToApp = true;
         }
         System.out.println(didGoToApp);
-        // do something here
+     
     }
     
   }
