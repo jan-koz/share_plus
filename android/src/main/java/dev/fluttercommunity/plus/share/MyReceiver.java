@@ -1,5 +1,10 @@
 package dev.fluttercommunity.plus.share;
 
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
+import io.flutter.embedding.engine.plugins.activity.ActivityAware;
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
+import io.flutter.plugin.common.MethodChannel;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
